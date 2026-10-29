@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffe4ef">
+<title>Para Andris Sofía 💗</title>
+<style>
+:root{--pink:#ec4899;--deep:#9d174d;--pale:#fff0f6;--cream:#fffafd}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;color:var(--deep);background:radial-gradient(circle at 15% 12%,#fff 0 2px,transparent 3px),radial-gradient(circle at 85% 32%,#fff 0 2px,transparent 3px),linear-gradient(180deg,#ffe4ef,#fff7fb 48%,#ffd9e9);background-size:120px 120px,160px 160px,auto;overflow-x:hidden;min-height:100vh}
+main{width:min(760px,100%);margin:auto;padding:18px 14px 46px;position:relative;z-index:1}
+.hero,.panel{background:rgba(255,255,255,.88);backdrop-filter:blur(5px);border:1px solid #fbcfe8;border-radius:26px;box-shadow:0 12px 35px #be185d18;padding:25px 18px;text-align:center;margin:13px 0}
+.hero{position:relative;overflow:hidden;border:1px solid #f9a8d4}
+.hero:before,.hero:after{content:'♡';position:absolute;color:#f9a8d4;opacity:.5;font-size:58px;pointer-events:none;animation:drift 5s ease-in-out infinite}
+.hero:before{left:12px;top:18px}.hero:after{right:14px;bottom:14px;animation-delay:-2s}
+.kicker{letter-spacing:2.5px;font:700 11px Arial,sans-serif;color:#db2777}
+h1{font-size:clamp(34px,9vw,58px);line-height:1.08;margin:15px 0;color:#be185d;text-shadow:0 3px 0 #fff}
+h2{font-size:26px;margin:8px 0 14px}
+p{font-size:17px;line-height:1.65}
+.subtitle{max-width:520px;margin:0 auto 20px}
+button{border:0;border-radius:999px;background:linear-gradient(135deg,#f472b6,#db2777);color:white;font-weight:bold;font-size:16px;padding:14px 22px;box-shadow:0 7px 18px #db277744;cursor:pointer;transition:transform .25s,box-shadow .25s}
+button:hover{transform:translateY(-2px);box-shadow:0 10px 24px #db277755}button:active{transform:scale(.98)}
+.heart-big{font-size:46px;animation:pulse 1.5s infinite;filter:drop-shadow(0 5px 8px #ec489944)}
+.note{font:13px/1.55 Arial,sans-serif;color:#9d174d}
+/* La carta se despliega con una animación suave */
+.letter-panel{overflow:hidden;max-height:0;opacity:0;transform:translateY(-18px) scale(.97);padding-top:0;padding-bottom:0;margin-top:0;margin-bottom:0;border-color:transparent;box-shadow:none;transition:max-height 1s ease,opacity .65s ease,transform .65s ease,padding .65s ease,margin .65s ease,border-color .65s ease,box-shadow .65s ease}
+.letter-panel.open{max-height:1400px;opacity:1;transform:translateY(0) scale(1);padding:25px 18px;margin:13px 0;border-color:#fbcfe8;box-shadow:0 12px 35px #be185d18}
+.letter-paper{position:relative;background:linear-gradient(180deg,#fffafd,#fff0f6);border:1px solid #f9a8d4;border-radius:20px;padding:22px 18px;text-align:left;line-height:1.8;font-size:16px;white-space:pre-line;box-shadow:inset 0 0 0 5px #fff9fc,0 8px 22px #be185d12}
+.letter-paper:before{content:'💗';display:block;text-align:center;font-size:25px;margin-bottom:8px;animation:pulse 1.7s infinite}
+.letter-sign{margin-top:14px;text-align:center;font-weight:bold}
+.floating{position:fixed;top:-55px;z-index:10;pointer-events:none;animation:fall linear forwards;opacity:0;filter:drop-shadow(0 3px 4px #be185d22)}
+.background-heart{position:fixed;z-index:0;pointer-events:none;color:#ec4899;opacity:.18;animation:drift 5s ease-in-out infinite}
+@keyframes fall{0%{transform:translate3d(0,-8vh,0) rotate(0deg);opacity:0}10%{opacity:.9}90%{opacity:.75}100%{transform:translate3d(var(--sway),115vh,0) rotate(360deg);opacity:0}}
+@keyframes pulse{50%{transform:scale(1.12)}}
+@keyframes drift{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(-10px) rotate(7deg)}}
+@media(max-width:420px){.hero,.panel{padding:22px 15px}.letter-panel.open{padding:22px 15px}.letter-paper{padding:19px 15px}.hero:before{font-size:40px}.hero:after{font-size:40px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="backgroundHearts" aria-hidden="true"></div>
+<main>
+  <section class="hero">
+    <div class="kicker">♡ UNA SORPRESA HECHA CON AMOR ♡</div>
+    <div class="heart-big">💗</div>
+    <h1>Feliz cumpleaños,<br>Andris Sofía</h1>
+    <p class="subtitle">Preparé este pequeño rinconcito solo para ti, para recordarte cuánto te quiero aunque hoy nos separen kilómetros.</p>
+    <button id="openBtn" aria-expanded="false" aria-controls="letterPanel">Abrir mi regalito 💌</button>
+    <p class="note">Toca el botón y deja que tu cartita se abra con todo mi amor.</p>
+  </section>
+
+  <section id="letterPanel" class="panel letter-panel" aria-hidden="true">
+    <div class="kicker">UNA CARTITA PARA TI</div>
+    <h2>Para mi niña hermosa 🎀</h2>
+    <div class="letter-paper" id="letterText">Feliz cumpleaños, mi amor hermoso. 🤎
+
+Hoy es un día muy especial porque nació una de las personas más bonitas e importantes de mi vida: tú. Quiero que sepas que tenerte a mi lado ha sido de las cosas más lindas que me han pasado.
+
+Deseo de todo corazón que la vida te regale muchísima felicidad, salud y amor, y que puedas cumplir cada uno de tus sueños. Quiero verte sonreír siempre, acompañarte en tus días buenos y abrazarte fuerte en los difíciles. Espero poder celebrar muchísimos cumpleaños más contigo y hacerte sentir tan amada como realmente mereces.
+
+Gracias por existir, mi niña bonita, y por convertirte en una parte tan especial de mi felicidad, eres y seguirás siendo una de las cosas más bonitas que me ha regalado la vida. Si hay algo que quiero que nunca olvides, es que te amo muchísimo y que deseo verte feliz hoy, mañana y siempre.
+
+Te amo muchísimo, mi niña hermosa. Feliz cumpleaños, mi princesa. 🤎 Que hoy y siempre la vida te dé motivos para sonreír.</div>
+    <p class="letter-sign">Te elegiría una y mil veces. 💗</p>
+  </section>
+
+  <section class="panel">
+    <div class="heart-big">🩷</div>
+    <h2>Un deseo para ti</h2>
+    <p>Que la vida te regale motivos para sonreír, personas que te cuiden bonito y sueños que se hagan realidad. Y que nunca te falte alguien que te recuerde lo valiosa y especial que eres.</p>
+    <p><strong>Feliz cumpleaños, Andris Sofía. Te quiero muchísimo. 🎂</strong></p>
+    <p>Si hoy pudiera estar a tu lado, te daría un abrazo tan grande que por un momento desaparecería la distancia. ❤️</p>
+  </section>
+  <footer>Hecho especialmente para Andris Sofía ♡<br>Con todo mi amor, hoy y siempre. 🎀</footer>
+</main>
+<script>
+const openBtn=document.getElementById('openBtn');
+const letter=document.getElementById('letterPanel');
+openBtn.addEventListener('click',()=>{
+  const isOpen=letter.classList.toggle('open');
+  openBtn.textContent=isOpen?'Cerrar mi cartita 💗':'Abrir mi regalito 💌';
+  openBtn.setAttribute('aria-expanded',String(isOpen));
+  letter.setAttribute('aria-hidden',String(!isOpen));
+  if(isOpen)setTimeout(()=>letter.scrollIntoView({behavior:'smooth',block:'start'}),180);
+});
+const emojis=['💗','💕','💖','💘','💞','♡','🌸'];
+function makeHeart(){
+  const h=document.createElement('div');h.className='floating';h.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+  h.style.left=Math.random()*100+'vw';h.style.fontSize=(15+Math.random()*22)+'px';h.style.animationDuration=(6+Math.random()*5)+'s';h.style.setProperty('--sway',(Math.random()*140-70)+'px');
+  document.body.appendChild(h);setTimeout(()=>h.remove(),11500);
+}
+function addBackgroundHearts(){
+  const holder=document.getElementById('backgroundHearts');
+  const hearts=['♡','♥','ღ','💕'];
+  for(let i=0;i<13;i++){
+    const el=document.createElement('span');el.className='background-heart';el.textContent=hearts[i%hearts.length];
+    el.style.left=(4+Math.random()*92)+'vw';el.style.top=(4+Math.random()*92)+'vh';el.style.fontSize=(18+Math.random()*34)+'px';el.style.animationDelay=(-Math.random()*6)+'s';el.style.animationDuration=(4+Math.random()*5)+'s';holder.appendChild(el);
+  }
+}
+addBackgroundHearts();
+for(let i=0;i<7;i++)setTimeout(makeHeart,i*350);
+setInterval(makeHeart,520);
+</script>
+</body>
+</html>
